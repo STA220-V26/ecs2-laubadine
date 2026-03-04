@@ -16,7 +16,6 @@ dt_supplies|stem|b17d5d82824ceb6f|a1616a5be8b4218b|2c530c1562a7fbd1|1729362904||
 dt_observations|stem|7337afa897a0c929|c25a3de69ecc1acf|2c530c1562a7fbd1|2145534448||t20363.3981149765s|s64356898b|64356898|qs|local|vector|||2.598||
 dt_providers|stem|87af10badb6a0149|f05a9aa2e14ffbfc|2c530c1562a7fbd1|948729742||t20363.3981155634s|s285273b|285273|qs|local|vector|||0.006||
 dt_conditions|stem|5421ce9b0cf4fc57|b0d29d772c636e53|2c530c1562a7fbd1|-2035416186||t20363.3981182948s|s5579914b|5579914|qs|local|vector|||0.103||
-csv_files|stem|cd46c580dcb72f3f|ee8c8506388aebb9|baeb2f1360659ba2|966457852||t20363.3982280285s|s64b|64|qs|local|vector|||9.466||
 codebook|stem|2c6c55d55ca15eb1|883ce2d3e7bc3837|4c27787832af983a|30408179||t20363.4165792423s|s5998b|5998|qs|local|vector|||1.125||
 data_scans_patient|stem|516c2b8b4ec906bd|511e014e1a2e2a8c|cefd3a087de3ca33|47654839|data_scans/dt_patients.html|t20363.487365172s|s2488254b|2488254|file|local|vector|||11.911|Only useing a sample of the data!|
 export_data_scan|function|a1f1c7813378b3f9
@@ -24,3 +23,4 @@ pkgs|object|3ffc09059bd8fbde
 get_codebook|function|5783bc83205d8ee7
 export_data_scans|function|a3622d6e6a84d364
 zipdata|stem|6da312022b65668f|af7f87c830782109|2c530c1562a7fbd1|-63167595|data.zip|t20516.5656857896s|s292920697b|292920697|file|local|vector|||0||
+csv_files|stem|519b5ac2d701e7cc|ee8c8506388aebb9|baeb2f1360659ba2|966457852||t20516.6042036414s|s64b|64|qs|local|vector|||15.91||

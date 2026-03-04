@@ -1,5 +1,6 @@
 library(targets)
 library(tarchetypes) # For extra target archetypes
+library(qs2)
 
 # Which packages do you need?
 pkgs <- c(
@@ -46,22 +47,27 @@ if (!fs::file_exists("data.zip")) {
 
 list(
   # make the zipdata object refer to the data.zip file path
-  tar_target(zipdata, "data.zip", format = "file")
+  tar_target(zipdata, "data.zip", format = "file"),
 
   # TODO: Something related to zip should be added here:
-  # And this comment should be replaced by something more useful
+  tar_target(csv_files, zip::unzip(zipdata))
+# return file names (all put into the newly created data-fixed folder)
+ 
 
   # TODO: uncomment this section when instructed
-  # tar_map(
-  #  values = tibble::tibble(path = dir("data-fixed", full.names = TRUE)) |>
-  #    dplyr::mutate(name = tools::file_path_sans_ext(basename(path))),
-  #  tar_target(dt, fread(path)),
-  #  names = name,
-  #  descriptions = NULL
-  #),
+  tar_map(
+  values = tibble::tibble(path = dir("data-fixed", full.names = TRUE)) |> # map = loop - make tibble of the full paths
+  dplyr::mutate(name = tools::file_path_sans_ext(basename(path))), # takes only the name of each file (without .csv or path)
+  tar_target(dt, fread(path)),  # create a folder containing the data of each file..
+  names = name,  # ..in a simply named file
+  descriptions = NULL
+  ),
 
   # TODO: something related to codebook should be added here
 
   # TODO: Something related to data_scans should be added here
 )
-tar_load(zipdata)
+# run to read the table
+fs::dir_map("data-fixed", data.table::fread)
+
+
