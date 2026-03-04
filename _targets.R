@@ -50,7 +50,7 @@ list(
   tar_target(zipdata, "data.zip", format = "file"),
 
   # TODO: Something related to zip should be added here:
-  tar_target(csv_files, zip::unzip(zipdata))
+  tar_target(csv_files, zip::unzip(zipdata)),
 # return file names (all put into the newly created data-fixed folder)
  
 
@@ -61,12 +61,12 @@ list(
   tar_target(dt, fread(path)),  # create a folder containing the data of each file..
   names = name,  # ..in a simply named file
   descriptions = NULL
-  ),
-
-  # TODO: something related to codebook should be added here
-
+  )
+   # TODO: something related to codebook should be added here
   # TODO: Something related to data_scans should be added here
 )
+ 
+
 # run to read the table
 fs::dir_map("data-fixed", data.table::fread)
 
