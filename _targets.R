@@ -64,3 +64,4 @@ list(
 
   # TODO: Something related to data_scans should be added here
 )
+tar_load(zipdata)
